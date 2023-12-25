@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="h-screen w-full flex justify-center items-center">
+    <div class="bg-gradient-to-r from-red-800 via-yellow-600 to-yellow-500 rounded-xl w-[500px]">
+ <h1 class="text-center text-[30px] text-white font-bold p-4">To-do list</h1>
+ <div class="flex p-4">
+    <input id="input" class="w-[90%] rounded  outline-none p-2" type="text">
+    <button onclick="addtodo()" class="text-3xl bg-green-500 p-2 rounded text-white">+</button>
+ </div>
+ <ul class="p-4 text-white text-xl" id="todolist"></ul>
+
+</div>
+
+<script>
+function addtodo(){
+    var inputvalue= document.getElementById('input').value;
+    var li= document.createElement('li');
+    li.appendChild(document.createTextNode(inputvalue))
+    var todolist= document.getElementById('todolist');
+    todolist.appendChild(li)
+    document.getElementById('input').value="";
+}
+</script>
+</body>
+</html>
